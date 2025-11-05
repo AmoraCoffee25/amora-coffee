@@ -120,3 +120,37 @@
   margin-bottom: 0.3rem;
   color: #f0f0f0;
 }
+
+
+    .valores {
+      margin: 15px 0 10px 15px;
+    }
+
+    .valores p {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    .valores span {
+      font-weight: 600;
+      color: #3c1f09;
+    }
+
+     .volver {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #8b4513;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .volver:hover {
+      background-color: #a15d2a;
+      transform: scale(1.05);
+    }
