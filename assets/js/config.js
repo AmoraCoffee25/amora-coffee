@@ -1,7 +1,8 @@
-const isLocal = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+// const isLocal = location.hostname === "C:/cafeteria/amora-coffee" || location.hostname === "C:/cafeteria/amora-coffee";
 
 const CONFIG = {
-  BASE_URL: isLocal
-    ? "http://localhost/misitio/"
-    : "https://amora-coffee.netlify.app/"
+  BASE_URL: "https://amora-coffee.netlify.app/"
+
 };
+
+//    : "https://amora-coffee.netlify.app/"
