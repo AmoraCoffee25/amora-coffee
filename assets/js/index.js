@@ -1,3 +1,4 @@
+
 const nameLogoImagen = document.getElementById("logoAmora");
 
 if(nameLogoImagen != null){
@@ -11,3 +12,5 @@ if(nameFavicon != null){
     const urlFavicon    = nameFavicon.getAttribute('data-favicon');
     nameFavicon.href    = CONFIG.BASE_URL + urlFavicon;
 }
+
+
