@@ -2,11 +2,11 @@ const noticias = [
   {
     titulo: "Vasos 100 % biodegradables",
     fecha: "Noviembre 2025",
-    imagen: "C:/cafeteria/amora-coffee/imagenes/1.jpeg",
+    imagen: `${ CONFIG.BASE_URL }imagenes/1.jpeg`,
     imagenes: [
-      "C:/cafeteria/amora-coffee/imagenes/1.jpeg",
-      "C:/cafeteria/amora-coffee/imagenes/2.jpeg",
-      "C:/cafeteria/amora-coffee/imagenes/3.jpeg"
+      `${ CONFIG.BASE_URL }imagenes/1.jpeg`,
+      `${ CONFIG.BASE_URL }imagenes/2.jpeg`,
+      `${ CONFIG.BASE_URL }imagenes/3.jpeg`
     ],
     resumen: "Amora Coffee presenta su nueva línea de vasos, tapas y sorbetes biodegradables elaborados con materiales naturales.",
     contenido: `

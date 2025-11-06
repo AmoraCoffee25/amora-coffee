@@ -6,4 +6,5 @@ const CONFIG = {
 
 };
 
+// C:/cafeteria/amora-coffee/
 //    : "https://amora-coffee.netlify.app/"
