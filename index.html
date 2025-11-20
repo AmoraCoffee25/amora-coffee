@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amora Coffee | ☕ Más que café, una experiencia bonita. 🌿</title>
-    <link rel="icon" href="imagenes/favicon.ico" data-favicon="imagenes/favicon.ico" type="image/png">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="icon" href="imagenes/favicon.ico" data-favicon="imagenes/favicon.ico" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
   <div class="overlay"></div>
 
@@ -19,7 +21,8 @@
     <p>☕ Más que café, una experiencia bonita. 🌿</p>
 
     <div class="redes-sociales">
-      <a href="https://www.facebook.com/people/Amora-Coffee/61581400769666/" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.facebook.com/people/Amora-Coffee/61581400769666/" target="_blank"><i
+          class="bi bi-facebook"></i></a>
       <a href="https://www.instagram.com/amoracoffeesac/" target="_blank"><i class="bi bi-instagram"></i></a>
       <a href="https://x.com/AmoraSac" target="_blank"><i class="bi bi-twitter"></i></a>
       <a id="wa-link" href="#" target="_blank"><i class="bi bi-whatsapp"></i></a>
@@ -27,19 +30,26 @@
     </div>
 
     <div class="links">
-      <a href="#">📋 Ver carta</a>
+      <a href="#" onclick="openModal()">📋 Ver carta</button>
       <a href="views/nosotros.html">👥 Nosotros</a>
       <a href="https://www.google.com/maps/search/?api=1&query=Amora+Coffee" target="_blank">📍 Ubicación</a>
       <a href="views/noticias.html">📰 Noticias</a>
     </div>
 
-        <div class="contacto">
+    <div class="contacto">
       <p>📍 Av. Cajamarca Sur S/N, Nueva Cajamarca</p>
       <p>📞 +51 954 422 614 </p>
       <p>✉️ amoracoffeesac@gmail.com</p>
     </div>
 
     <footer>© 2025 Amora Coffee — Todos los derechos reservados</footer>
+  </div>
+
+  <div class="modal" id="modalCarta" onclick="closeModal(event)">
+    <span class="close" onclick="closeModal(event)">&times;</span>
+    <span class="arrow left" onclick="prevImage(event)">&#10094;</span>
+    <img id="modalImage" src="">
+    <span class="arrow right" onclick="nextImage(event)">&#10095;</span>
   </div>
 
   <script src="assets/js/config.js"></script>
@@ -54,12 +64,38 @@
     const link = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
 
     document.getElementById("wa-link").href = link;
+
+    const imagenes = [
+      "imagenes/carta_1.jpeg",
+      "imagenes/carta_2.jpeg"
+    ];
+
+    let index = 0;
+
+    function openModal() {
+      document.getElementById('modalCarta').style.display = 'flex';
+      document.getElementById('modalImage').src = imagenes[index];
+    }
+
+    function closeModal(e) {
+      // Evita cerrar si se hizo click en las flechas o en la imagen
+      if (e.target.classList.contains('arrow')) return;
+      if (e.target.id === "modalImage") return;
+      document.getElementById('modalCarta').style.display = 'none';
+    }
+
+    function nextImage(e) {
+      e.stopPropagation();
+      index = (index + 1) % imagenes.length;
+      document.getElementById('modalImage').src = imagenes[index];
+    }
+
+    function prevImage(e) {
+      e.stopPropagation();
+      index = (index - 1 + imagenes.length) % imagenes.length;
+      document.getElementById('modalImage').src = imagenes[index];
+    }
   </script>
 </body>
+
 </html>
-
-
-
-
-
-
